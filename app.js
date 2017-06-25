@@ -25,7 +25,7 @@ angular.module('app', ['ngMaterial'])
       });
     }
 
-    $scope.items = ['$-$$', '$$-$'];
+    $scope.items = ['--$-$$--', '--$$-$--'];
     $scope.selectedItem;
     $scope.getSelectedText = () => {
       if ($scope.selectedItem !== undefined) {
@@ -35,7 +35,7 @@ angular.module('app', ['ngMaterial'])
     };
 
     $scope.sort = (sortBy) => {
-      if (sortBy === '$-$$') {
+      if (sortBy === '--$-$$--') {
         $scope.cocktails = $scope.cocktails.sort((a, b) => a.Cost - b.Cost);
       } else {
         $scope.cocktails = $scope.cocktails.sort((a, b) => b.Cost - a.Cost);
@@ -79,5 +79,5 @@ angular.module('app', ['ngMaterial'])
       $scope.cancel = () => {
         $mdDialog.cancel();
       };
-    }
+    };
   });
