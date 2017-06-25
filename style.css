@@ -1,3 +1,7 @@
 .description {
   font-size: 12px;
 }
+
+.searchbox {
+  width: 200px;
+}
