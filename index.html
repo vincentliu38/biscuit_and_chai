@@ -14,5 +14,40 @@
   </head>
 
   <body ng-controller="mainCtrl">
+
+    <md-content layout-align="center" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+      <div>
+        <md-input-container>
+          <label>Filter</label>
+          <input ng-model="searchText">
+        </md-input-container>
+      </div>
+    </md-content>
+    
+       <md-content layout-align="center" ng-repeat="cocktail in cocktails | filter:search" class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+          <md-card>
+            <img ng-src={{cocktail.Image}} class="md-card-image" alt="Washed Out">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{cocktail.Name}}</span>
+              <span class="md-subhead">{{cocktail.DrinkType}}</span>
+            </md-card-title-text>
+          </md-card-title>
+            <md-card-content>
+              <p class="description">
+                {{cocktail.Description}}
+                <br></br>
+                {{cocktail.Cost}}
+              </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Ingredients</md-button>
+              <md-button>Recipie</md-button>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </md-content>
+
   </body>
 </html>
